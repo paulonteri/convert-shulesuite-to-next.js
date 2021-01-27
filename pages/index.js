@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Link from "next/link";
-import { startClock } from "../actions";
+import { startClock } from "../state/actions";
 import Examples from "../components/examples";
 
 const Index = () => {
