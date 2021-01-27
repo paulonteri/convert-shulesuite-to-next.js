@@ -20,7 +20,6 @@ Router.events.on("routeChangeError", () => NProgress.done());
 export default function App({ Component, pageProps }) {
     const store = useStore(pageProps.initialReduxState);
     const router = useRouter();
-    console.log(router.pathname);
 
     return (
         <Provider store={store}>

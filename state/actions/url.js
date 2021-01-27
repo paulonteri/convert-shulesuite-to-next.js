@@ -2,7 +2,9 @@ const SERVER_URL = () => {
     if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
         return "http://localhost:8000";
     } else {
-        return "https://api.demo.shulesuite.com";
+        // TODO: fix url
+        // return "https://api.demo.shulesuite.com";
+        return "http://localhost:8000";
     }
 };
 
