@@ -1,0 +1,42 @@
+:root {
+  --light-theme: #9ed0ff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.ant-input::placeholder {
+  color: #8c8c8c;
+}
+.ant-input::-webkit-input-placeholder {
+  color: #8c8c8c;
+}
+.ant-input:-ms-input-placeholder {
+  color: #8c8c8c;
+}
+.ant-input::-ms-input-placeholder {
+  color: #8c8c8c;
+}
+.ant-picker-input > input::-webkit-input-placeholder {
+  color: #8c8c8c;
+}
+.ant-picker-input > input:-ms-input-placeholder {
+  color: #8c8c8c;
+}
+.ant-picker-input > input::-ms-input-placeholder {
+  color: #8c8c8c;
+}
+.ant-picker-input > input::placeholder {
+  color: #8c8c8c;
+}
