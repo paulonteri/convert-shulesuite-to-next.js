@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "antd": "^4.11.2",
+    "axios": "^0.21.1",
+    "axios-cache-adapter": "^2.5.0",
     "bootstrap": "^4.6.0",
     "next": "latest",
     "next-pwa": "^5.0.4",
