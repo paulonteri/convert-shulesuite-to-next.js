@@ -11,7 +11,7 @@ const Index = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div>
       <Examples />
       <Link href="/show-redux-state">
         <a>Click to see current Redux State</a>
@@ -19,7 +19,7 @@ const Index = () => {
       <Link href="/login">
         <a>Login</a>
       </Link>
-    </>
+    </div>
   );
 };
 
