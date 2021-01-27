@@ -40,7 +40,7 @@ const initialState = {
     uploadedExamResultsPerStudent: false,
 };
 
-export default function (state = initialState, action) {
+export default function Exams(state = initialState, action) {
     switch (action.type) {
         case GET_EXAMS_SUCCESS:
             return {

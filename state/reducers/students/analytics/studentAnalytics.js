@@ -10,7 +10,7 @@ const initialState = {
     getStudentAnalyticsFailed: false,
 };
 
-export default function (state = initialState, action) {
+export default function StudentAnalytics(state = initialState, action) {
     switch (action.type) {
         case GET_STUDENT_ANALYTICS_SUCCESS:
             return {

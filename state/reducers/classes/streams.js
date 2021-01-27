@@ -20,7 +20,7 @@ const initialState = {
     deleteStreamFail: false,
 };
 
-export default function (state = initialState, action) {
+export default function Streams(state = initialState, action) {
     switch (action.type) {
         case GET_STREAMS_SUCCESS:
             return {

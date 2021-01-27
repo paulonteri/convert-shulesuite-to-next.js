@@ -20,7 +20,7 @@ const initialState = {
     deleteClassNumeralFail: false,
 };
 
-export default function (state = initialState, action) {
+export default function ClassNumerals(state = initialState, action) {
     switch (action.type) {
         case GET_CLASS_NUMERALS_SUCCESS:
             return {

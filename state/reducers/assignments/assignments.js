@@ -29,7 +29,7 @@ const initialState = {
     uploadedAssignments: false,
 };
 
-export default function (state = initialState, action) {
+export default function Assignments(state = initialState, action) {
     switch (action.type) {
         case GET_ASSIGNMENTS_SUCCESS:
             return {

@@ -12,7 +12,7 @@ const initialState = {
     getSubjectsFailed: false,
 };
 
-export default function (state = initialState, action) {
+export default function Subjects(state = initialState, action) {
     switch (action.type) {
         case GET_SUBJECTS_SUCCESS:
             return {

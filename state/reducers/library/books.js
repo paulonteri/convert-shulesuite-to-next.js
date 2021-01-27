@@ -12,7 +12,7 @@ import {
 
 const initialState = { books: [], bookInstances: [], booksIssued: [] };
 
-export default function (state = initialState, action) {
+export default function Books(state = initialState, action) {
     switch (action.type) {
         case GET_BOOKS:
             return {

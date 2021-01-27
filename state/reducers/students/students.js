@@ -15,7 +15,7 @@ const initialState = {
     getStudentsFailed: false,
 };
 
-export default function (state = initialState, action) {
+export default function Students(state = initialState, action) {
     switch (action.type) {
         case GET_STUDENTS_SUCCESS:
             return {

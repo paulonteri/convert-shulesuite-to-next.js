@@ -26,7 +26,7 @@ const initialState = {
     patchingClassesFailed: false,
 };
 
-export default function (state = initialState, action) {
+export default function Classes(state = initialState, action) {
     switch (action.type) {
         case GET_CLASSES_SUCCESS:
             return {

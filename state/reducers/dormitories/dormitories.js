@@ -6,7 +6,7 @@ import {
 
 const initialState = { dormitories: [] };
 
-export default function (state = initialState, action) {
+export default function Dorms(state = initialState, action) {
     switch (action.type) {
         case GET_DORMS:
             return {
