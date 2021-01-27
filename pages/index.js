@@ -16,6 +16,9 @@ const Index = () => {
       <Link href="/show-redux-state">
         <a>Click to see current Redux State</a>
       </Link>
+      <Link href="/login">
+        <a>Login</a>
+      </Link>
     </>
   );
 };
