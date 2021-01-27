@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Provider } from "react-redux";
 import { useStore } from "../state/store";
+//
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/index.css";

@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import rootReducer from "./reducers";
+import rootReducer from "./reducers/index";
 // import * as Sentry from "@sentry/react";
 // const sentryReduxEnhancer = Sentry.createReduxEnhancer({
 //     // Optionally pass options
