@@ -1,21 +1,14 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import { Redirect } from "react-router-dom";
-// import { login } from "../../actions/auth/auth";
+import { login } from "../state/actions/auth/auth";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-// import SpinnerFull from "../common/SpinnerFull";
+import SpinnerFull from "../components/Spinner/SpinnerFull";
 import { Input, Form, Button } from "antd";
-
-function SpinnerFull() {
-  return <div></div>;
-}
-
-function login() {
-  return "";
-}
+import { useRouter } from "next/router";
 
 export const Login = (props) => {
+  const router = useRouter();
   const [form] = Form.useForm();
 
   const onFinish = (e) => {
@@ -31,7 +24,8 @@ export const Login = (props) => {
   }, []);
 
   if (props.isAuthenticated) {
-    // return <Redirect to="/" />;
+    router.push("/");
+    return <SpinnerFull info="Redirecting..." />;
   } else if (props.isLoading) {
     return <SpinnerFull info=" Authenticating Credentials..." />;
   } else
@@ -103,8 +97,8 @@ Login.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: false,
-  isLoading: false,
+  isAuthenticated: state.authReducer.isAuthenticated,
+  isLoading: state.authReducer.isLoading,
 });
 
 export default connect(mapStateToProps, { login })(Login);
