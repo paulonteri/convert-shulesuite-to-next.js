@@ -1,6 +1,6 @@
 import React from "react";
-// import StudentForm from "../../components/students/StudentForm";
+import StudentsGeneralInfo from "../../components/students/StudentsGeneralInfo";
 
-export default function Table() {
-    return <p>Students</p>;
+export default function Students() {
+    return <StudentsGeneralInfo />;
 }
