@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import { Provider } from "react-redux";
 import { useStore } from "../state/store";
@@ -5,6 +6,7 @@ import Router, { useRouter } from "next/router";
 import NProgress from "nprogress";
 //
 import Dashboard from "../layout/Dashboard";
+import CheckAuth from "../components/Auth/CheckAuth";
 //
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -52,9 +54,11 @@ export default function App({ Component, pageProps }) {
             </Head>
 
             {["/login"].find((url) => router.pathname.includes(url)) == null ? (
-                <Dashboard>
-                    <Component {...pageProps} />
-                </Dashboard>
+                <CheckAuth>
+                    <Dashboard>
+                        <Component {...pageProps} />
+                    </Dashboard>
+                </CheckAuth>
             ) : (
                 <Component {...pageProps} />
             )}
