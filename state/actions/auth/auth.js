@@ -12,6 +12,7 @@ import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
     LOGIN_LOADING,
+    CHECK_CACHED_AUTH
 } from "./types";
 
 // CHECK TOKEN & LOAD USER
@@ -26,12 +27,12 @@ export const loadUser = () => (dispatch, getState) => {
             .then((res) => {
                 dispatch({
                     type: USER_LOADED,
-                    payload: res.data,
+                    payload: res.data
                 });
             })
             .catch((err) => {
                 dispatch({
-                    type: AUTH_ERROR,
+                    type: AUTH_ERROR
                 });
             });
     } else {
@@ -45,8 +46,8 @@ export const login = (username, password) => (dispatch) => {
     // Headers
     const config = {
         headers: {
-            "Content-Type": "application/json",
-        },
+            "Content-Type": "application/json"
+        }
     };
     // Request Body (change to string)
     const body = JSON.stringify({ username: username, password: password });
@@ -55,13 +56,13 @@ export const login = (username, password) => (dispatch) => {
         .then((res) => {
             dispatch({
                 type: LOGIN_SUCCESS,
-                payload: res.data,
+                payload: res.data
             });
         })
         .catch((err) => {
             dispatch(createMessage({ loginFail: "Login Failed" }));
             dispatch({
-                type: LOGIN_FAIL,
+                type: LOGIN_FAIL
             });
         });
 };
@@ -71,8 +72,8 @@ export const register = ({ username, email, password }) => (dispatch) => {
     // Headers
     const config = {
         headers: {
-            "Content-Type": "application/json",
-        },
+            "Content-Type": "application/json"
+        }
     };
     // Request Body (change to string)
     const body = JSON.stringify({ username, email, password });
@@ -82,13 +83,13 @@ export const register = ({ username, email, password }) => (dispatch) => {
             dispatch(createMessage({ registerUser: "User Regisered" }));
             dispatch({
                 type: REGISTER_SUCCESS,
-                payload: res.data,
+                payload: res.data
             });
         })
         .catch((err) => {
             dispatch(returnErrors(err.response.data, err.response.status));
             dispatch({
-                type: REGISTER_FAIL,
+                type: REGISTER_FAIL
             });
         });
 };
@@ -100,12 +101,16 @@ export const logout = () => (dispatch, getState) => {
         .then((res) => {
             dispatch({ type: "CLEAR_ALL" });
             dispatch({
-                type: LOGOUT_SUCCESS,
+                type: LOGOUT_SUCCESS
             });
         })
         .catch((err) => {
             dispatch(returnErrors(err.response.data, err.response.status));
         });
+};
+
+export const checkCachedAuth = () => (dispatch, getState) => {
+    dispatch({ type: CHECK_CACHED_AUTH });
 };
 
 // Setup config with token - helper function
