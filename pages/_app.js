@@ -6,7 +6,7 @@ import Router, { useRouter } from "next/router";
 import NProgress from "nprogress";
 //
 import Dashboard from "../layout/Dashboard";
-import CheckAuth from "../components/Auth/CheckAuth";
+import CheckAuth from "../components/auth/CheckAuth";
 //
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
