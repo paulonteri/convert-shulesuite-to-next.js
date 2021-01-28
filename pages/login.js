@@ -118,3 +118,11 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { login, checkCachedAuth, loadUser })(
     Login
 );
+
+// Static Generation
+export async function getStaticProps(context) {
+    return {
+        // will be passed to the page component as props
+        props: {}
+    };
+}
