@@ -36,7 +36,7 @@ export class BookInfoTable extends Component {
                             render={(parameter) => (
                                 <Link
                                     href={
-                                        "/library/bookinfodetail/" +
+                                        "/staff/library/bookinfodetail/" +
                                         parameter.id
                                     }
                                 >

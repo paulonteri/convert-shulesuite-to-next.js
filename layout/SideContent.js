@@ -15,7 +15,7 @@ export const SideContent = (props) => {
     return (
         <Fragment>
             <div className="logo mt-2 ml-3 pl-1 pt-2 ">
-                <Link onClick={props.onClickFunc} href="/">
+                <Link onClick={props.onClickFunc} href="/staff/">
                     <h3 style={{ color: "grey" }}>School</h3>
                 </Link>
             </div>
@@ -34,20 +34,26 @@ export const SideContent = (props) => {
                     }
                 >
                     <Menu.Item key="1">
-                        <Link onClick={props.onClickFunc} href="/students">
+                        <Link
+                            onClick={props.onClickFunc}
+                            href="/staff/students"
+                        >
                             Students
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="2">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/students/table"
+                            href="/staff/students/table"
                         >
                             Student List
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="3">
-                        <Link onClick={props.onClickFunc} href="/students/add">
+                        <Link
+                            onClick={props.onClickFunc}
+                            href="/staff/students/add"
+                        >
                             Add Student
                         </Link>
                     </Menu.Item>
@@ -64,14 +70,14 @@ export const SideContent = (props) => {
                     }
                 >
                     <Menu.Item key="5">
-                        <Link onClick={props.onClickFunc} href="/library">
+                        <Link onClick={props.onClickFunc} href="/staff/library">
                             Library
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="6">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/library/issuebookform"
+                            href="/staff/library/issuebookform"
                         >
                             Issue Book
                         </Link>
@@ -79,7 +85,7 @@ export const SideContent = (props) => {
                     <Menu.Item key="7">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/library/bookinfoform"
+                            href="/staff/library/bookinfoform"
                         >
                             Add Book
                         </Link>
@@ -87,7 +93,7 @@ export const SideContent = (props) => {
                     <Menu.Item key="8">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/library/bookinstanceform"
+                            href="/staff/library/bookinstanceform"
                         >
                             Add Book Instance
                         </Link>
@@ -95,7 +101,7 @@ export const SideContent = (props) => {
                     <Menu.Item key="233">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/library/bookinfotable"
+                            href="/staff/library/bookinfotable"
                         >
                             Book Table
                         </Link>
@@ -113,14 +119,14 @@ export const SideContent = (props) => {
                     }
                 >
                     <Menu.Item key="9">
-                        <Link onClick={props.onClickFunc} href="/classes">
+                        <Link onClick={props.onClickFunc} href="/staff/classes">
                             Classes
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="10">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/classes/streams"
+                            href="/staff/classes/streams"
                         >
                             Streams
                         </Link>
@@ -128,7 +134,7 @@ export const SideContent = (props) => {
                     <Menu.Item key="11">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/classes/classnumerals"
+                            href="/staff/classes/classnumerals"
                         >
                             Class Numerals
                         </Link>
@@ -147,7 +153,7 @@ export const SideContent = (props) => {
                     <Menu.Item key="12">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/examinations/results/add/student"
+                            href="/staff/examinations/results/add/student"
                         >
                             Add Student Results
                         </Link>
@@ -155,7 +161,7 @@ export const SideContent = (props) => {
                     <Menu.Item key="13">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/examinations/results/add/class"
+                            href="/staff/examinations/results/add/class"
                         >
                             Add Class Results
                         </Link>
@@ -174,7 +180,7 @@ export const SideContent = (props) => {
                     <Menu.Item key="51">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/assignments/add"
+                            href="/staff/assignments/add"
                         >
                             Issue Assignment
                         </Link>
@@ -182,7 +188,7 @@ export const SideContent = (props) => {
                     <Menu.Item key="52">
                         <Link
                             onClick={props.onClickFunc}
-                            href="/assignments/all"
+                            href="/staff/assignments/all"
                         >
                             All Assignments
                         </Link>

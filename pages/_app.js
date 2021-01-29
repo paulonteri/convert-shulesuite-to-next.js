@@ -82,16 +82,14 @@ export default function App({ Component, pageProps }) {
                 {/* --------------------------------- */}
                 <Alerts />
 
-                {["/login", "/404"].find((url) =>
-                    router.pathname.includes(url)
-                ) ? (
-                    <Component {...pageProps} />
-                ) : (
+                {router.pathname.includes("/staff") ? (
                     <CheckAuth>
                         <Dashboard>
                             <Component {...pageProps} />
                         </Dashboard>
                     </CheckAuth>
+                ) : (
+                    <Component {...pageProps} />
                 )}
                 {/* --------------------------------- */}
             </AlertProvider>

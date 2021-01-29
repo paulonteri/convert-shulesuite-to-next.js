@@ -26,7 +26,9 @@ export const Login = (props) => {
     }, []);
 
     if (props.isAuthenticated) {
-        router.query.next ? router.push(router.query.next) : router.push("/");
+        router.query.next
+            ? router.push(router.query.next)
+            : router.push("/staff");
         props.loadUser();
         return <SpinnerFull info="Redirecting..." />;
     } else if (props.isLoading) {
