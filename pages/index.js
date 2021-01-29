@@ -1,22 +1,16 @@
 import React from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Login from "../components/auth/Login";
 
-const Index = () => {
-    if (typeof window !== "undefined") {
-        const router = useRouter();
-        router.push("/staff");
-    }
-    return (
-        <div>
-            <Link href="/show-redux-state">
-                <a>Click to see current Redux State</a>
-            </Link>
-            <Link href="/login">
-                <a>Login</a>
-            </Link>
-        </div>
-    );
+const LoginPage = () => {
+    return <Login />;
 };
 
-export default Index;
+export default LoginPage;
+
+// Static Generation
+export async function getStaticProps(context) {
+    return {
+        // will be passed to the page component as props
+        props: {}
+    };
+}
