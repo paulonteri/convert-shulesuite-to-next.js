@@ -1,5 +1,4 @@
 import React from "react";
-s;
 import StreamList from "./StreamList";
 import StreamForm from "./StreamForm";
 import ClassNList from "./ClassNList";

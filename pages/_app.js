@@ -24,11 +24,13 @@ const alertOptions = {
 };
 
 // Progress bar
-//Binding events.
+// Binding events.
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
+// TODO: Add sentry
+// TODO: Fix antd imports
 export default function App({ Component, pageProps }) {
     const store = useStore(pageProps.initialReduxState);
     const router = useRouter();

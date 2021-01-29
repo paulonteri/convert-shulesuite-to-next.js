@@ -16,7 +16,6 @@ export const Login = (props) => {
     };
 
     useEffect(() => {
-        //
         props.checkCachedAuth();
         //
         form.setFieldsValue({
@@ -27,7 +26,7 @@ export const Login = (props) => {
     }, []);
 
     if (props.isAuthenticated) {
-        router.push("/");
+        router.query.next ? router.push(router.query.next) : router.push("/");
         props.loadUser();
         return <SpinnerFull info="Redirecting..." />;
     } else if (props.isLoading) {
