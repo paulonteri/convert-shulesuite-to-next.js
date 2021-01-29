@@ -7,6 +7,10 @@
             "**/.*",
             "**/node_modules/**",
             "**/.next/**"
-        ]
+        ],
+        // Drops `.html` from uploaded URLs
+        "cleanUrls": true,
+        // Removes trailing slashes from URLs
+        "trailingSlash": false
     }
 }

@@ -1,1 +1,1 @@
-yarn && yarn next build && yarn next export && firebase deploy && serve out
+yarn && yarn next build && yarn next export && firebase deploy && firebase serve
