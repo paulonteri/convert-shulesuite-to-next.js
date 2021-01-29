@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { login, checkCachedAuth, loadUser } from "../state/actions/auth/auth";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import SpinnerFull from "../components/spinner/SpinnerFull";
+import SpinnerFull from "../layout/spinner/SpinnerFull";
 import { Input, Form, Button } from "antd";
 import { useRouter } from "next/router";
 

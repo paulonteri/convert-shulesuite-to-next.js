@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 //
-import SpinnerFull from "../spinner/SpinnerFull";
+import SpinnerFull from "../../layout/spinner/SpinnerFull";
 
 export const CheckAuth = (props) => {
     const router = useRouter();

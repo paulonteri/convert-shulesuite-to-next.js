@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Spinner from "../spinner/Spinner";
+import Spinner from "../../layout/spinner/Spinner";
 import StreamList from "./StreamList";
 import StreamForm from "./StreamForm";
 import ClassNList from "./ClassNList";
@@ -13,36 +13,36 @@ const ClassesDashboard = () => {
             <div className="row">
                 <div className="col-md mb-2">
                     <Suspense fallback={<Spinner />}>
-                        <ClassesList />
+                    <ClassesList />
                     </Suspense>
                 </div>
                 <div className="col-md mb-2">
                     <Suspense fallback={<Spinner />}>
-                        <AddClassesForm />
-                    </Suspense>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md mb-2">
-                    <Suspense fallback={<Spinner />}>
-                        <StreamList />
-                    </Suspense>
-                </div>
-                <div className="col-md mb-2">
-                    <Suspense fallback={<Spinner />}>
-                        <StreamForm />
+                    <AddClassesForm />
                     </Suspense>
                 </div>
             </div>
             <div className="row">
                 <div className="col-md mb-2">
                     <Suspense fallback={<Spinner />}>
-                        <ClassNList />
+                    <StreamList />
                     </Suspense>
                 </div>
                 <div className="col-md mb-2">
                     <Suspense fallback={<Spinner />}>
-                        <ClassNForm />
+                    <StreamForm />
+                    </Suspense>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-md mb-2">
+                    <Suspense fallback={<Spinner />}>
+                    <ClassNList />
+                    </Suspense>
+                </div>
+                <div className="col-md mb-2">
+                    <Suspense fallback={<Spinner />}>
+                    <ClassNForm />
                     </Suspense>
                 </div>
             </div>
