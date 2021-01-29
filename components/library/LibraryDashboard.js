@@ -1,6 +1,5 @@
-import React, { Fragment, Component, Suspense } from "react";
-import Spinner from "../../layout/spinner/Spinner";
-
+import React, { Fragment, Component } from "react";
+//
 import BookInstanceForm from "./BookInstanceForm";
 import BookInfoTable from "./BookInfoTable";
 import BookInfoForm from "./BookInfoForm";
@@ -12,24 +11,17 @@ export class LibraryDashboard extends Component {
             <Fragment>
                 <div class="container-fluid ">
                     <div className="row mb-2">
-                        <Suspense fallback={<Spinner />}>
-                            <BookTotalsCards />
-                        </Suspense>
+                        <BookTotalsCards />
                     </div>
                     <div className="row">
                         <div className="col-sm-6">
-                            <Suspense fallback={<Spinner />}>
-                                <BookInfoTable />
-                            </Suspense>
+                            <BookInfoTable />
                         </div>
 
                         <div className="col-sm-6">
-                            <Suspense fallback={<Spinner />}>
-                                <BookInstanceForm />
-                            </Suspense>
-                            <Suspense fallback={<Spinner />}>
-                                <BookInfoForm />
-                            </Suspense>
+                            <BookInstanceForm />
+
+                            <BookInfoForm />
                         </div>
                     </div>
                 </div>
