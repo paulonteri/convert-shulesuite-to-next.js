@@ -4,14 +4,23 @@ import { Provider } from "react-redux";
 import { useStore } from "../state/store";
 import Router, { useRouter } from "next/router";
 import NProgress from "nprogress";
+import { Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
 //
 import Dashboard from "../layout/Dashboard";
 import CheckAuth from "../components/auth/CheckAuth";
+import Alerts from "../components/alerts/Alerts";
 //
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/index.css";
 import "nprogress/nprogress.css"; //styles of nprogress
+
+// Alert Options
+const alertOptions = {
+    timeout: 3250,
+    position: "top center"
+};
 
 // Progress bar
 //Binding events.
@@ -25,43 +34,49 @@ export default function App({ Component, pageProps }) {
 
     return (
         <Provider store={store}>
-            <Head>
-                <meta charSet="utf-8" />
-                <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-                <meta
-                    name="viewport"
-                    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-                />
-                <meta name="description" content="Description" />
-                <meta name="keywords" content="Keywords" />
-                <title>Next.js PWA Example</title>
+            <AlertProvider template={AlertTemplate} {...alertOptions}>
+                <Head>
+                    <meta charSet="utf-8" />
+                    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                    <meta
+                        name="viewport"
+                        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+                    />
+                    <meta name="description" content="Description" />
+                    <meta name="keywords" content="Keywords" />
+                    <title>Next.js PWA Example</title>
 
-                <link rel="manifest" href="/manifest.json" />
-                <link
-                    href="/icons/favicon-16x16.png"
-                    rel="icon"
-                    type="image/png"
-                    sizes="16x16"
-                />
-                <link
-                    href="/icons/favicon-32x32.png"
-                    rel="icon"
-                    type="image/png"
-                    sizes="32x32"
-                />
-                <link rel="apple-touch-icon" href="/apple-icon.png"></link>
-                <meta name="theme-color" content="#317EFB" />
-            </Head>
+                    <link rel="manifest" href="/manifest.json" />
+                    <link
+                        href="/icons/favicon-16x16.png"
+                        rel="icon"
+                        type="image/png"
+                        sizes="16x16"
+                    />
+                    <link
+                        href="/icons/favicon-32x32.png"
+                        rel="icon"
+                        type="image/png"
+                        sizes="32x32"
+                    />
+                    <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+                    <meta name="theme-color" content="#317EFB" />
+                </Head>
+                {/* --------------------------------- */}
+                <Alerts />
 
-            {["/login"].find((url) => router.pathname.includes(url)) == null ? (
-                <CheckAuth>
-                    <Dashboard>
-                        <Component {...pageProps} />
-                    </Dashboard>
-                </CheckAuth>
-            ) : (
-                <Component {...pageProps} />
-            )}
+                {["/login"].find((url) => router.pathname.includes(url)) ==
+                null ? (
+                    <CheckAuth>
+                        <Dashboard>
+                            <Component {...pageProps} />
+                        </Dashboard>
+                    </CheckAuth>
+                ) : (
+                    <Component {...pageProps} />
+                )}
+                {/* --------------------------------- */}
+            </AlertProvider>
         </Provider>
     );
 }
