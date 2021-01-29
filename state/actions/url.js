@@ -4,8 +4,8 @@ const SERVER_URL = () => {
         return "http://localhost:8000";
     } else {
         // TODO: fix url
-        // return "https://api.demo.shulesuite.com";
-        return "http://localhost:8000";
+        return "https://api.demo.shulesuite.com";
+        // return "http://localhost:8000";
     }
 };
 

@@ -1,0 +1,23 @@
+{
+    "hosting": {
+        "site": "shulesuite",
+        "public": "out",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**",
+            "**/.next/**"
+        ],
+        "headers": [
+            {
+                "source": "**",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "max-age=31536000"
+                    }
+                ]
+            }
+        ]
+    }
+}

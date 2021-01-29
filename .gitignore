@@ -33,6 +33,7 @@ yarn-error.log*
 # vercel
 .vercel
 
+# next-pwa
 **/public/precache.*.*.js
 **/public/sw.js
 **/public/workbox-*.js
@@ -41,3 +42,10 @@ yarn-error.log*
 **/public/sw.js.map
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
+
+# firebase
+**/node_modules/*
+**/.firebase
+service-account-credentials.json
+**/database-debug.log
+**/firebase-debug.log

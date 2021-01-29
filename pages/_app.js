@@ -31,6 +31,7 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 // TODO: Add sentry
 // TODO: Fix antd imports
+// TODO: add testing -> https://medium.com/frontend-digest/setting-up-testing-library-with-nextjs-a9702cbde32d
 export default function App({ Component, pageProps }) {
     const store = useStore(pageProps.initialReduxState);
     const router = useRouter();
