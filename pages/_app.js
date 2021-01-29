@@ -6,10 +6,9 @@ import Router, { useRouter } from "next/router";
 import NProgress from "nprogress";
 import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+import dynamic from "next/dynamic";
 //
-import Dashboard from "../layout/Dashboard";
-import CheckAuth from "../components/auth/CheckAuth";
-import Alerts from "../components/alerts/Alerts";
+import SpinnerFull from "../layout/spinner/SpinnerFull";
 import { URL } from "../state/actions/url";
 //
 import "antd/dist/antd.css";
@@ -22,6 +21,18 @@ const alertOptions = {
     timeout: 3250,
     position: "top center"
 };
+// dynamic imports
+const Dashboard = dynamic(() => import("../layout/Dashboard"), {
+    ssr: false,
+    loading: () => <SpinnerFull info="  Loading dashboard..." />
+});
+const CheckAuth = dynamic(() => import("../components/auth/CheckAuth"), {
+    ssr: false,
+    loading: () => <SpinnerFull info="  Loading auth..." />
+});
+const Alerts = dynamic(() => import("../components/alerts/Alerts"), {
+    ssr: false
+});
 
 // Progress bar
 // Binding events.
@@ -48,6 +59,9 @@ export default function App({ Component, pageProps }) {
         }
         // eslint-disable-next-line
     }, [store.getState().authReducer.isAuthenticated]);
+
+    if (router.pathname.includes("/staff")) {
+    }
 
     return (
         <Provider store={store}>
