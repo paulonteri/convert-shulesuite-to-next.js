@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import { Provider } from "react-redux";
 import { useStore } from "../state/store";
@@ -10,6 +10,7 @@ import AlertTemplate from "react-alert-template-basic";
 import Dashboard from "../layout/Dashboard";
 import CheckAuth from "../components/auth/CheckAuth";
 import Alerts from "../components/alerts/Alerts";
+import { URL } from "../state/actions/url";
 //
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -31,6 +32,19 @@ Router.events.on("routeChangeError", () => NProgress.done());
 export default function App({ Component, pageProps }) {
     const store = useStore(pageProps.initialReduxState);
     const router = useRouter();
+
+    // OnMount warm server
+    // eslint-disable-next-line
+    useEffect(() => {
+        if (store.getState().authReducer.isAuthenticated !== true) {
+            // store.dispatch(loadUser());
+            const Http = new XMLHttpRequest();
+            const url = `${URL}/api/ping/`;
+            Http.open("GET", url);
+            Http.send();
+        }
+        // eslint-disable-next-line
+    }, [store.getState().authReducer.isAuthenticated]);
 
     return (
         <Provider store={store}>
