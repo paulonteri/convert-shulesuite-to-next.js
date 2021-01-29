@@ -1,5 +1,5 @@
 import React, { Fragment, Component, Suspense } from "react";
-import Spinner from "../Spinner/Spinner";
+import Spinner from "../spinner/Spinner";
 
 import BookInstanceForm from "./BookInstanceForm";
 import BookInfoTable from "./BookInfoTable";

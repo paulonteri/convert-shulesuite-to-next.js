@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Spinner from "../Spinner/Spinner";
+import Spinner from "../spinner/Spinner";
 import StreamList from "./StreamList";
 import StreamForm from "./StreamForm";
 import ClassNList from "./ClassNList";
