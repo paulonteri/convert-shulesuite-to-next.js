@@ -105,8 +105,8 @@ Login.propTypes = {
     loadUser: PropTypes.func.isRequired,
     checkCachedAuth: PropTypes.func.isRequired,
     login: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool.isRequired,
-    isLoading: PropTypes.bool.isRequired
+    isAuthenticated: PropTypes.bool,
+    isLoading: PropTypes.bool
 };
 
 const mapStateToProps = (state) => ({
@@ -117,11 +117,3 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { login, checkCachedAuth, loadUser })(
     Login
 );
-
-// Static Generation
-export async function getStaticProps(context) {
-    return {
-        // will be passed to the page component as props
-        props: {}
-    };
-}
