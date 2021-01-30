@@ -1,5 +1,5 @@
 import React from "react";
-import BookInstanceForm from "../../../components/library/BookInstanceForm";
+import BookInstanceForm from "../../../src/components/library/BookInstanceForm";
 
 export default function LibraryForm() {
     return <BookInstanceForm />;

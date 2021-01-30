@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import BookInfoDetail from "../../../../components/library/BookInfoDetail";
+import BookInfoDetail from "../../../../src/components/library/BookInfoDetail";
 
 export default function BookDetail() {
     const router = useRouter();

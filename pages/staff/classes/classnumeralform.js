@@ -1,5 +1,5 @@
 import React from "react";
-import ClassNForm from "../../../components/classes/ClassNForm";
+import ClassNForm from "../../../src/components/classes/ClassNForm";
 
 export default function Classes() {
     return <ClassNForm />;

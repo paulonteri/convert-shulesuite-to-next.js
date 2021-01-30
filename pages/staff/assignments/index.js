@@ -1,5 +1,5 @@
 import React from "react";
-import AddAssignment from "../../../components/assignments/AddAssignment";
+import AddAssignment from "../../../src/components/assignments/AddAssignment";
 
 export default function Assignment() {
     return <AddAssignment />;

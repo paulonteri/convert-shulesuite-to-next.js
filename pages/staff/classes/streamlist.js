@@ -1,5 +1,5 @@
 import React from "react";
-import StreamList from "../../../components/classes/StreamList";
+import StreamList from "../../../src/components/classes/StreamList";
 
 export default function Classes() {
     return <StreamList />;

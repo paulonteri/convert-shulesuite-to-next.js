@@ -1,19 +1,20 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import { Provider } from "react-redux";
-import { useStore } from "../state/store";
 import Router, { useRouter } from "next/router";
 import NProgress from "nprogress";
 import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import dynamic from "next/dynamic";
 //
-import SpinnerFull from "../layout/spinner/SpinnerFull";
-import { URL } from "../state/actions/url";
+import { useStore } from "../src/state/store";
+//
+import SpinnerFull from "../src/layout/spinner/SpinnerFull";
+import { URL } from "../src/state/actions/url";
 //
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/index.css";
+import "../src/styles/index.css";
 import "nprogress/nprogress.css"; //styles of nprogress
 
 // Alert Options
@@ -22,15 +23,15 @@ const alertOptions = {
     position: "top center"
 };
 // dynamic imports
-const Dashboard = dynamic(() => import("../layout/Dashboard"), {
+const Dashboard = dynamic(() => import("../src/layout/Dashboard"), {
     ssr: false,
     loading: () => <SpinnerFull info="  Loading dashboard..." />
 });
-const CheckAuth = dynamic(() => import("../components/auth/CheckAuth"), {
+const CheckAuth = dynamic(() => import("../src/components/auth/CheckAuth"), {
     ssr: false,
     loading: () => <SpinnerFull info="  Loading auth..." />
 });
-const Alerts = dynamic(() => import("../components/alerts/Alerts"), {
+const Alerts = dynamic(() => import("../src/components/alerts/Alerts"), {
     ssr: false
 });
 
