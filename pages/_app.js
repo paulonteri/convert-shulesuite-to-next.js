@@ -48,6 +48,11 @@ export default function App({ Component, pageProps }) {
     const store = useStore(pageProps.initialReduxState);
     const router = useRouter();
 
+    // expose store when run in Cypress
+    if (typeof window !== "undefined" && window.Cypress) {
+        window.store = store;
+    }
+
     // OnMount warm server
     // eslint-disable-next-line
     useEffect(() => {
@@ -113,9 +118,4 @@ export default function App({ Component, pageProps }) {
             </AlertProvider>
         </Provider>
     );
-}
-
-// expose store when run in Cypress
-if (window && window.Cypress) {
-    window.store = store;
 }

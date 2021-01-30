@@ -3,7 +3,8 @@ const SERVER_URL = () => {
     if (
         !process.env.NODE_ENV ||
         process.env.NODE_ENV === "development" ||
-        process.env.NEXT_PUBLIC_DEBUG === "True"
+        process.env.NEXT_PUBLIC_DEBUG === "True" ||
+        (typeof window !== "undefined" && window.Cypress)
     ) {
         return "http://localhost:8000";
     } else {
