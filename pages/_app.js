@@ -114,3 +114,8 @@ export default function App({ Component, pageProps }) {
         </Provider>
     );
 }
+
+// expose store when run in Cypress
+if (window && window.Cypress) {
+    window.store = store;
+}

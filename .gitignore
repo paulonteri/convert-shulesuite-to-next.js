@@ -49,3 +49,6 @@ yarn-error.log*
 service-account-credentials.json
 **/database-debug.log
 **/firebase-debug.log
+
+/cypress/videos/
+/cypress/screenshots/
